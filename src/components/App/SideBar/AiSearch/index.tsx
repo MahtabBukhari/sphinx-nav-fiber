@@ -18,6 +18,10 @@ export const AiSearch = () => {
   const isLoading = useHasAiChatsResponse()
 
   const handleSubmit = form.handleSubmit(({ search }) => {
+    if (search.trim() === '') {
+      return
+    }
+
     fetchData(setBudget, setAbortRequests, search)
     reset({ search: '' })
   })
