@@ -16,7 +16,7 @@ import { SearchBar } from '~/components/SearchBar'
 import { Flex } from '~/components/common/Flex'
 import { FetchLoaderText } from '~/components/common/Loader'
 import { getSchemaAll } from '~/network/fetchSourcesData'
-import { useAiSummaryStore, useHasAiChats, useHasAiChatsResponse } from '~/stores/useAiSummaryStore'
+import { useAiSummaryStore, useHasAiChats } from '~/stores/useAiSummaryStore'
 import { useAppStore } from '~/stores/useAppStore'
 import { useDataStore, useFilteredNodes } from '~/stores/useDataStore'
 import { useFeatureFlagStore } from '~/stores/useFeatureFlagStore'
@@ -117,8 +117,6 @@ const Content = forwardRef<HTMLDivElement, ContentProp>(({ subViewOpen }, ref) =
 
   const hasAiChats = useHasAiChats()
 
-  const hasAiChatsResponse = useHasAiChatsResponse()
-
   return (
     <Wrapper ref={ref} id="sidebar-wrapper">
       <TitlePlaceholder />
@@ -212,7 +210,7 @@ const Content = forwardRef<HTMLDivElement, ContentProp>(({ subViewOpen }, ref) =
         </Flex>
         {!hasAiChats && <Relevance isSearchResult={!!searchTerm || hasAiChats} />}
       </ScrollWrapper>
-      {hasAiChatsResponse ? <AiSearch /> : null}
+      {hasAiChats ? <AiSearch /> : null}
     </Wrapper>
   )
 })

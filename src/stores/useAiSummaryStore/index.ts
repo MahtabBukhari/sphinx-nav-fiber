@@ -65,7 +65,12 @@ export const useHasAiChatsResponse = () =>
       return false
     }
 
-    const firstKey = Object.keys(answers)[0]
+    const allKeys = Object.keys(answers)
+    const hasAnswers = allKeys.every((key) => !!answers[key]?.answer)
 
-    return !!answers[firstKey]?.answer
+    if (!hasAnswers) {
+      return false
+    }
+
+    return true
   })
