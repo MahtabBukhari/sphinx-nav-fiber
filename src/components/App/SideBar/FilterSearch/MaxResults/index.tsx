@@ -3,6 +3,7 @@ import { HeadingWrapper, PopoverBody, SourceNodesStepWrapper, SubHeading, Volume
 
 type MaxResultsProps = {
   maxResults: number
+
   setMaxResults: (value: number) => void
 }
 
