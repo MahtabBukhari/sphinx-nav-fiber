@@ -4,6 +4,7 @@ export const colors = {
   disableBtn: 'rgba(35, 37, 47, 0.8)',
   bluePressState: 'rgb(57, 97, 220)',
   addAttributeBtn: 'rgba(107, 122, 141, 0.25)',
+  colorPickerThing: 'rgba(255, 158, 239, 1)',
   blueTextAccent: 'rgb(130, 180, 255)',
   body: 'rgb(21, 30, 39)',
   boostBg1: 'rgb(32, 63, 62)',
